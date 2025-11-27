@@ -1,0 +1,149 @@
+using UnityEngine;
+using System.Net.Sockets;
+using System.Text;
+using System.Collections;
+
+public class Vibrate_Change2 : MonoBehaviour
+{
+    public enum TaskType
+    {
+        Handle_vibe, Handle_random, Arm_vibe, Arm_random, Back_vibe, Back_random
+    }
+
+    [System.Serializable]
+    public class VibrationPattern
+    {
+        public string name = "Pattern";
+        public TaskType task_type;
+        public int patternType;
+    }
+
+    [Header("Network Settings")]
+    public string raspberryPiIP = "192.168.11.36";
+    public int port = 5005;
+
+    [Header("Vibration Patterns (2 patterns)")]
+    public VibrationPattern[] patterns = new VibrationPattern[2]; // インスペクタで2つ指定可能
+
+    private UdpClient udpClient;
+    private VibrationPattern currentPattern;
+    private bool isVibrating = false;
+    public static bool vibrate_status = false;//saveFunction3用
+
+    void Start()
+    {
+        udpClient = new UdpClient();
+        if (patterns.Length > 0)
+        {
+            SetPattern(0); // 最初のパターンを初期化
+        }
+    }
+
+    /// <summary>
+    /// ボックスに触れたときに呼ばれる
+    /// </summary>
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Vibration_Start"))
+        {
+            StartCoroutine(StartPattern(0));
+            other.gameObject.SetActive(false);
+            vibrate_status = true;
+        }
+        else if (other.CompareTag("Vibration_Change"))
+        {
+            StartCoroutine(StartPattern(1));
+            other.gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Vibration_Stop"))
+        {
+            StopVibration();
+            other.gameObject.SetActive(false);
+            vibrate_status = false;
+        }
+
+        //Debug.Log(" other name " + other.name);
+    }
+    
+
+    private IEnumerator StartPattern(int index)
+    {
+
+        SendSettings(true);
+        yield return new WaitForSeconds(1f);
+       
+
+        currentPattern = patterns[index];
+        currentPattern.patternType = GetPatternTypeFromTaskType(currentPattern.task_type);
+
+        SendSettings(false);
+
+        //Debug.Log(" start pattern " +  index);
+        
+        
+        
+    }
+
+    private void StopVibration()
+    {
+            SendSettings(true);
+
+            //Debug.Log(" Stopppppppp");
+            
+    }
+
+    private void SetPattern(int index)
+    {
+
+
+        if (index < 0 || index >= patterns.Length)
+            return;
+
+        currentPattern = patterns[index];
+        currentPattern.patternType = GetPatternTypeFromTaskType(currentPattern.task_type);
+    }
+
+    private int GetPatternTypeFromTaskType(TaskType taskType)
+    {
+        switch (taskType)
+        {
+            case TaskType.Handle_vibe: return 0;
+            case TaskType.Handle_random: return 1;
+            case TaskType.Arm_vibe: return 2;
+            case TaskType.Arm_random: return 3;
+            case TaskType.Back_vibe: return 4;
+            case TaskType.Back_random: return 5;
+            default: return 0;
+        }
+    }
+
+    private void SendSettings(bool stop)
+    {
+        if (udpClient == null)
+            udpClient = new UdpClient();
+
+        VibrationSettings settings = new VibrationSettings(
+            currentPattern.patternType,
+            stop
+        );
+
+        string json = JsonUtility.ToJson(settings);
+        byte[] data = Encoding.UTF8.GetBytes(json);
+        udpClient.Send(data, data.Length, raspberryPiIP, port);
+
+        Debug.Log("送信データ: " + json);
+    }
+
+    [System.Serializable]
+    public class VibrationSettings
+    {
+        public int Pattern;
+        public bool stop;
+
+        public VibrationSettings(int p, bool s)
+        {
+            Pattern = p;
+            stop = s;
+        }
+    }
+}

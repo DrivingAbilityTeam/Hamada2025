@@ -1,0 +1,64 @@
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+using static UnityEngine.ParticleSystem;
+
+public class Smoke_Change_Back: MonoBehaviour
+{
+
+
+    [SerializeField] private GameObject Particle;
+
+    [SerializeField] GameObject target;
+    [SerializeField] GameObject car;
+    [SerializeField] private float StartIn;//�A���[�g��\��������ۂ̋����̔���l
+    [SerializeField] private float StartOut;
+
+
+    Vector3 CarP;
+    Vector3 TargetP;
+
+    private float disZ;//��������p
+    private float DisZ;
+    private float rad;
+    
+    private void Start()
+    {
+        Particle.SetActive(false);
+        
+    }
+
+    void Update()
+    {
+        TargetP = target.transform.position;
+        CarP = car.transform.position;
+
+        disZ = Vector3.Distance(TargetP, CarP);//�Ԃƃn�U�[�h�̋����𑪒�
+        rad = GetAngle(TargetP, CarP);//�n�U�[�h�Ƃ̊p�x���Z�o
+        DisZ = disZ * Mathf.Sin(rad);//Sin�֐��ŋ����ɐ���������
+
+
+        if (StartOut >= DisZ && DisZ > StartIn && Hit.hit)
+        {
+            Particle.SetActive(true);
+        }
+
+        if (DisZ > StartOut || !Hit.hit)
+        {
+            Particle.SetActive(false);
+        }
+
+    }
+
+    //��_�̊p�x�����߂�֐�
+    float GetAngle(Vector3 TargetP, Vector3 CarP)
+    {
+        Vector3 dt = TargetP - CarP;
+        float rad = Mathf.Atan2(dt.z, dt.x);
+        return rad;
+    }
+
+
+}
