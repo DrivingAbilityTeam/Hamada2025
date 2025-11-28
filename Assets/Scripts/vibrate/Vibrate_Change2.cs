@@ -7,7 +7,7 @@ public class Vibrate_Change2 : MonoBehaviour
 {
     public enum TaskType
     {
-        Handle_vibe, Handle_random, Arm_vibe, Arm_random, Back_vibe, Back_random
+        Handle_vibe, Handle_random, Arm_vibe, Arm_random, Back_vibe, Back_random, Normal_Heart, Accel_Heart
     }
 
     [System.Serializable]
@@ -113,6 +113,8 @@ public class Vibrate_Change2 : MonoBehaviour
             case TaskType.Arm_random: return 3;
             case TaskType.Back_vibe: return 4;
             case TaskType.Back_random: return 5;
+            case TaskType.Normal_Heart: return 6;
+            case TaskType.Accel_Heart: return 7;
             default: return 0;
         }
     }
