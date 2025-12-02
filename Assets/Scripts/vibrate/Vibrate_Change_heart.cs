@@ -66,27 +66,19 @@ public class Vibrate_Change_heart : MonoBehaviour
 
     private IEnumerator StartPattern(int index)
     {
-
-        SendSettings(true);
-        yield return new WaitForSeconds(1f);
        
-
         currentPattern = patterns[index];
         currentPattern.patternType = GetPatternTypeFromTaskType(currentPattern.task_type);
 
         SendSettings(false);
+        yield return null;
 
-        //Debug.Log(" start pattern " +  index);
-        
-        
-        
+
     }
 
     private void StopVibration()
     {
             SendSettings(true);
-
-            //Debug.Log(" Stopppppppp");
             
     }
 
@@ -139,5 +131,10 @@ public class Vibrate_Change_heart : MonoBehaviour
             Pattern = p;
             stop = s;
         }
+    }
+    // シーン停止やアプリ終了時に呼ばれる
+    private void OnApplicationQuit()
+    {
+        StopVibration();
     }
 }
