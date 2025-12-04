@@ -33,13 +33,18 @@ public class saveFunction3 : MonoBehaviour
   public string raspberryPiIP = "192.168.11.36";
   public int port = 5010;
 
-  private UdpClient udpClient;
+  public string raspberryPi_perche_IP = "192.168.11.55";
+  public int port_perche = 60001;
+
+    private UdpClient udpClient;
+    private UdpClient udpClient_perche;
 
     // Start is called before the first frame update
     void Start()
   {
-    udpClient = new UdpClient();
-    Debug.Log("BPM_SavemodeON");
+        udpClient = new UdpClient();
+        udpClient_perche = new UdpClient();
+        Debug.Log("BPM_SavemodeON");
 
     _carTrans = GameObject.FindGameObjectWithTag("Player").transform;
     _car = _carTrans.GetComponent<CarController>();
@@ -65,6 +70,7 @@ public class saveFunction3 : MonoBehaviour
 
     // --- ここでBPMログ開始の信号をラズパイに送信 ---
     SendBpmCommand("log");
+    SendPercheCommand("log");
     }
 
     public void SaveData(string txt1, string txt2, string txt3, string txt4, string txt5, string txt6, string txt7, string txt8, string txt9, string txt10, string txt11, string txt12)//�f�[�^�擾�̃I�u�W�F�N�g�ɃA�^�b�`����X�N���v�g���ŌĂяo�����֐�
@@ -75,6 +81,7 @@ public class saveFunction3 : MonoBehaviour
         sw.WriteLine(s2);
         // === SaveDataタイミングでBPM記録指示を送信 ===
         SendBpmCommand("save");
+        SendPercheCommand("save");
     }
 
     void Update()
@@ -86,6 +93,7 @@ public class saveFunction3 : MonoBehaviour
       {
             Debug.Log("手動で記録停止（Enterキー）");
             SendBpmCommand("stop");
+            SendPercheCommand("stop");
             sw.Close();
 
       }
@@ -105,11 +113,26 @@ public class saveFunction3 : MonoBehaviour
         }
 
     }
+    void SendPercheCommand(string command)
+    {
+        try
+        {
+            byte[] data = Encoding.UTF8.GetBytes(command);
+            udpClient_perche.Send(data, data.Length, raspberryPi_perche_IP, port_perche);
+            Debug.Log("送信コマンド: " + command);
+        }
+
+        catch (Exception e)
+        {
+            Debug.LogWarning("UDP送信失敗: " + e.Message);
+        }
+
+    }
 
     void OnApplicationQuit()
   {
         SendBpmCommand("stop");  // ゲーム終了時にBPM記録を停止信号を送る
-
+        SendPercheCommand("stop");
         if(sw == null){
             return;
         }

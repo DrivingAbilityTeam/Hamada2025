@@ -20,6 +20,7 @@ TagManager:
   - Vibration_Start
   - Vibration_Stop
   - Vibration_Change
+  - Perche_On
   layers:
   - Default
   - TransparentFX

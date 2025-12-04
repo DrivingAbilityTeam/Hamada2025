@@ -44,6 +44,7 @@ public class Vibrate_Change2 : MonoBehaviour
     /// </summary>
     void OnTriggerEnter(Collider other)
     {
+        if (!this.enabled) { return; } //スクリプトを非アクティブにしてもトリガーは有効なため、この一行を入れる
         if (other.CompareTag("Vibration_Start"))
         {
             StartCoroutine(StartPattern(0));
