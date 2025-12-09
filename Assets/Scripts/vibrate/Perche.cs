@@ -48,7 +48,7 @@ public class Perche : MonoBehaviour
     {
         if (!this.enabled) { return; } //スクリプトを非アクティブにしてもトリガーは有効なため、この一行を入れる
 
-        if (other.CompareTag("Vibration_Start"))
+        if (other.CompareTag("Perche_On"))
         {
             SendPerche();
             other.gameObject.SetActive(false);

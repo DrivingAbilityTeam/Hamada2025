@@ -16,6 +16,10 @@ public class TaikousyaStart : MonoBehaviour
     [SerializeField] private GameObject HeikousyaGroupC;
     [SerializeField] private GameObject HeikousyaGroupD;
 
+    [SerializeField] private GameObject HumanGroupB;
+    [SerializeField] private GameObject HumanGroupC;
+    [SerializeField] private GameObject HumanGroupD;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,7 @@ public class TaikousyaStart : MonoBehaviour
             CarGroupB.SetActive(true);
             CarGroupA.SetActive(false);
             HeikousyaGroupB.SetActive(true);
+            HumanGroupB.SetActive(true);
         }
         if (Curve_Hit.Curve_In == 2)
         {
@@ -38,6 +43,8 @@ public class TaikousyaStart : MonoBehaviour
             CarGroupB.SetActive(false);
             HeikousyaGroupB.SetActive(false);
             HeikousyaGroupC.SetActive(true);
+            HumanGroupB.SetActive(false);
+            HumanGroupC.SetActive(true);
         }
         if (Curve_Hit.Curve_In == 3)
         {
@@ -45,6 +52,8 @@ public class TaikousyaStart : MonoBehaviour
             CarGroupC.SetActive(false);
             HeikousyaGroupC.SetActive(false);
             HeikousyaGroupD.SetActive(true);
+            HumanGroupC.SetActive(false);
+            HumanGroupD.SetActive(true);
         }
         
 

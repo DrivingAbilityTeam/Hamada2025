@@ -7,7 +7,7 @@ public class Vibrate_Change_heart : MonoBehaviour
 {
     public enum TaskType
     {
-        Normal_Heartvibe, Accel_Heartvibe
+        Normal_Heartvibe, Accel_Heartvibe, Slow_Heartvibe
     }
 
     [System.Serializable]
@@ -16,14 +16,14 @@ public class Vibrate_Change_heart : MonoBehaviour
         public string name = "Pattern";
         public TaskType task_type;
         public int patternType;
+        public int volume_patternType;
     }
-
     [Header("Network Settings")]
     public string raspberryPiIP = "192.168.11.55";
     public int port = 5005;
 
     [Header("Vibration Patterns (2 patterns)")]
-    public VibrationPattern[] patterns = new VibrationPattern[2]; // インスペクタで2つ指定可能
+    public VibrationPattern[] patterns = new VibrationPattern[3]; // インスペクタで2つ指定可能
 
     private UdpClient udpClient;
     private VibrationPattern currentPattern;
@@ -54,6 +54,11 @@ public class Vibrate_Change_heart : MonoBehaviour
         else if (other.CompareTag("Vibration_Change"))
         {
             StartCoroutine(StartPattern(1));
+            other.gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Vibration_Change2"))
+        {
+            StartCoroutine(StartPattern(2));
             other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("Vibration_Stop"))
@@ -101,6 +106,7 @@ public class Vibrate_Change_heart : MonoBehaviour
         {
             case TaskType.Normal_Heartvibe: return 0;
             case TaskType.Accel_Heartvibe: return 1;
+            case TaskType.Slow_Heartvibe: return 2;
             default: return 0;
         }
     }
@@ -112,6 +118,7 @@ public class Vibrate_Change_heart : MonoBehaviour
 
         VibrationSettings settings = new VibrationSettings(
             currentPattern.patternType,
+            currentPattern.volume_patternType,
             stop
         );
 
@@ -126,11 +133,13 @@ public class Vibrate_Change_heart : MonoBehaviour
     public class VibrationSettings
     {
         public int Pattern;
+        public int VolumePattern;
         public bool stop;
 
-        public VibrationSettings(int p, bool s)
+        public VibrationSettings(int p,int vp, bool s)
         {
             Pattern = p;
+            VolumePattern = vp;
             stop = s;
         }
     }
