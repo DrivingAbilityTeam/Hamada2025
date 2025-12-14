@@ -20,10 +20,23 @@ public class TaikousyaStart : MonoBehaviour
     [SerializeField] private GameObject HumanGroupC;
     [SerializeField] private GameObject HumanGroupD;
 
+    [Header("êÊçsé‘ÇÃON / OFF")]
+    [SerializeField] private bool Senkosya_mode = true;
+    [SerializeField] private GameObject SenkosyaObject;
+
+
+    private void ApplyActiveState()
+    {
+        if (SenkosyaObject != null)
+        {
+            SenkosyaObject.SetActive(Senkosya_mode);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        ApplyActiveState();
     }
 
     // Update is called once per frame
@@ -34,26 +47,27 @@ public class TaikousyaStart : MonoBehaviour
         {
             CarGroupB.SetActive(true);
             CarGroupA.SetActive(false);
-            HeikousyaGroupB.SetActive(true);
             HumanGroupB.SetActive(true);
+            HeikousyaGroupB.SetActive(true);
+            
         }
         if (Curve_Hit.Curve_In == 2)
         {
             CarGroupC.SetActive(true);
             CarGroupB.SetActive(false);
-            HeikousyaGroupB.SetActive(false);
-            HeikousyaGroupC.SetActive(true);
             HumanGroupB.SetActive(false);
             HumanGroupC.SetActive(true);
+            HeikousyaGroupB.SetActive(false);
+            HeikousyaGroupC.SetActive(true);
         }
         if (Curve_Hit.Curve_In == 3)
         {
             CarGroupD.SetActive(true);
             CarGroupC.SetActive(false);
-            HeikousyaGroupC.SetActive(false);
-            HeikousyaGroupD.SetActive(true);
             HumanGroupC.SetActive(false);
             HumanGroupD.SetActive(true);
+            HeikousyaGroupC.SetActive(false);
+            HeikousyaGroupD.SetActive(true);
         }
         
 

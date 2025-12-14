@@ -22,6 +22,10 @@ TagManager:
   - Vibration_Change
   - Perche_On
   - Vibration_Change2
+  - blinker
+  - blinker_off
+  - Kosaten_Senkosya
+  - KosatenOut_Senkosya
   layers:
   - Default
   - TransparentFX
