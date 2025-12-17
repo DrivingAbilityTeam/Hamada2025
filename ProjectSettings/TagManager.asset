@@ -26,6 +26,8 @@ TagManager:
   - blinker_off
   - Kosaten_Senkosya
   - KosatenOut_Senkosya
+  - Alert_Hit
+  - Alert_off
   layers:
   - Default
   - TransparentFX

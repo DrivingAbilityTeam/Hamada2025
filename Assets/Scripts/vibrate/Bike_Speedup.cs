@@ -70,7 +70,7 @@ public class Bike_Speedup : MonoBehaviour
     void OnTriggerEnter(Collider collider)//����ʉ߂����瑬�x���ω�����
 {
 
-
+        if (!this.enabled) { return; } //スクリプトを非アクティブにしてもトリガーは有効なため、この一行を入れる
         if (collider.gameObject.tag == "Bike_Speedup")//�ʉ߂�����o�C�N���o������
         {
             Speedup_mode = true;

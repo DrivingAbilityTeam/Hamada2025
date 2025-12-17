@@ -51,7 +51,7 @@ public class Perche : MonoBehaviour
         if (other.CompareTag("Perche_On"))
         {
             SendPerche();
-            other.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);//衝突後にオブジェクトを非アクティブ
         }
 
     }

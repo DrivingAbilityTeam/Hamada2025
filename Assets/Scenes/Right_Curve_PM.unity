@@ -2016,11 +2016,10 @@ MonoBehaviour:
   pathCreator: {fileID: 972638462}
   moveSpeed: 5.5
   SlowSpeed: 3
-  target1: {fileID: 2130996096}
-  target2: {fileID: 1874412418}
   car: {fileID: 1279342677}
-  StartIn: 5
-  StartOut: 0
+  ChangeMode: 0
+  ChangeSpeed1: 0
+  ChangeSpeed2: 0
 --- !u!4 &147461905
 Transform:
   m_ObjectHideFlags: 0
@@ -2444,6 +2443,7 @@ GameObject:
   - component: {fileID: 189938179}
   - component: {fileID: 189938182}
   - component: {fileID: 189938181}
+  - component: {fileID: 189938183}
   m_Layer: 0
   m_Name: Honda Accord
   m_TagString: Untagged
@@ -2513,6 +2513,8 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_BrakeTorque: 2000
   handleObj: {fileID: 0}
+  m_Rigidbody: {fileID: 0}
+  speed: 0
 --- !u!54 &189938181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2542,6 +2544,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 5}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &189938183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189938177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CarDriveType: 2
+  m_WheelColliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_WheelMeshes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_WheelEffects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
+  m_MaximumSteerAngle: 0
+  m_SteerHelper: 0
+  m_TractionControl: 0
+  m_FullTorqueOverAllWheels: 0
+  m_ReverseTorque: 0
+  m_MaxHandbrakeTorque: 0
+  m_Downforce: 100
+  m_SpeedType: 0
+  m_Topspeed: 200
+  m_RevRangeBoundary: 1
+  m_SlipLimit: 0
+  m_BrakeTorque: 0
 --- !u!1001 &192092912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11904,6 +11947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarSpeed: 0.2
+  Car: {fileID: 0}
 --- !u!65 &825130464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17140,6 +17184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarSpeed: 0.2
+  Car: {fileID: 0}
 --- !u!1 &1268516688
 GameObject:
   m_ObjectHideFlags: 0
@@ -22438,6 +22483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarSpeed: 0
+  Car: {fileID: 0}
 --- !u!1 &1598397508
 GameObject:
   m_ObjectHideFlags: 0
@@ -24533,6 +24579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarSpeed: 0.2
+  Car: {fileID: 0}
 --- !u!54 &1748959336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27025,6 +27072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarSpeed: 0.2
+  Car: {fileID: 0}
 --- !u!1 &1956595611
 GameObject:
   m_ObjectHideFlags: 0

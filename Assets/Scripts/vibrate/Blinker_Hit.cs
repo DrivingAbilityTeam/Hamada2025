@@ -17,6 +17,7 @@ public class Blinker_Hit : MonoBehaviour
     [SerializeField] private GameObject leftBlinker;
     [SerializeField] private GameObject rightBlinker;
 
+   
     private void Start()
     {
         // ������Ԃł͗���OFF
@@ -26,6 +27,7 @@ public class Blinker_Hit : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        if (!this.enabled) { return; } //スクリプトを非アクティブにしてもトリガーは有効なため、この一行を入れる
         if (collider.gameObject.tag == "blinker")
         {
             ActivateBlinker();
