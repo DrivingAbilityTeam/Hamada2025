@@ -1,0 +1,15 @@
+Time,Accel,Brake,Car_Speed,Car_AutoSpeed,Car_AutoStatus,Bike_A_Status,Bike_B_Status,Bike_C_Status,Bike_D_Status,Bike_Distance,Vibrate_Status,BPM
+0.0200,0.0000,0.0000,0.0000,0.0000,False,False,False,False,False,0.0000,False
+0.0400,0.0000,0.0000,0.7049,0.0000,False,False,False,False,False,0.0000,False
+0.3733,0.0000,0.0000,1.1529,0.0000,False,False,False,False,False,0.0000,False
+0.4578,0.0000,0.0000,0.3516,0.0000,False,False,False,False,False,0.0000,False
+0.4988,0.0000,0.0000,0.1348,0.0000,False,False,False,False,False,0.0000,False
+0.5472,0.0000,0.0000,0.0479,0.0000,False,False,False,False,False,0.0000,False
+0.5915,0.0000,0.0000,0.0856,0.0000,False,False,False,False,False,0.0000,False
+0.6267,0.0000,0.0000,0.0949,0.0000,False,False,False,False,False,0.0000,False
+0.6638,0.0000,0.0000,0.0869,0.0000,False,False,False,False,False,0.0000,False
+0.7001,0.0000,0.0000,0.0709,0.0000,False,False,False,False,False,0.0000,False
+0.7355,0.0000,0.0000,0.0619,0.0000,False,False,False,False,False,0.0000,False
+0.7704,0.0000,0.0000,0.0445,0.0000,False,False,False,False,False,0.0000,False
+0.8653,0.0000,0.0000,0.0131,0.0000,False,False,False,False,False,0.0000,False
+0.9095,0.0000,0.0000,0.0062,0.0000,False,False,False,False,False,0.0000,False

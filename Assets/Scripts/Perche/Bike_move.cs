@@ -13,6 +13,7 @@ public class Bike_move : MonoBehaviour
     // Start is called before the first frame update
 
     public static bool bike_roop;
+    public float Setspeed;
 
     public enum SpeedType
     {
@@ -26,7 +27,7 @@ public class Bike_move : MonoBehaviour
     {
         if (speed_type == SpeedType.speed_30)
         {
-            CarSpeed = 30f;
+            CarSpeed = Setspeed;
         }
         if (speed_type == SpeedType.speed_40)
         {
