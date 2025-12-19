@@ -38466,7 +38466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &109725614
 Transform:
   m_ObjectHideFlags: 0
@@ -39586,7 +39586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &122156075
 Transform:
   m_ObjectHideFlags: 0
@@ -40484,6 +40484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 135555909}
+  Setspeed: 0
   speed_type: 2
 --- !u!4 &135555909 stripped
 Transform:
@@ -55819,6 +55820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 182604412}
+  Setspeed: 0
   speed_type: 2
 --- !u!4 &182604412 stripped
 Transform:
@@ -79564,6 +79566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 319123076}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &319123080
 MonoBehaviour:
@@ -141763,6 +141766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 619604479}
+  Setspeed: 0
   speed_type: 2
 --- !u!4 &619604479 stripped
 Transform:
@@ -170091,6 +170095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 743355077}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &743355081
 MonoBehaviour:
@@ -175129,6 +175134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 786818250}
+  Setspeed: 0
   speed_type: 2
 --- !u!4 &786818250 stripped
 Transform:
@@ -200348,6 +200354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 975990648}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &975990652
 MonoBehaviour:
@@ -231510,6 +231517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 1072093387}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &1072093391
 MonoBehaviour:
@@ -234571,6 +234579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 1100105264}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &1100105268
 MonoBehaviour:
@@ -265345,7 +265354,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279342677}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 940c7bd214c546544a094575f68c05d1, type: 3}
   m_Name: 
@@ -265356,7 +265365,7 @@ MonoBehaviour:
   - name: Pattern
     task_type: 0
     patternType: 0
-    volume_patternType: 7
+    volume_patternType: 0
   - name: Pattern
     task_type: 1
     patternType: 1
@@ -265364,7 +265373,7 @@ MonoBehaviour:
   - name: Pattern
     task_type: 0
     patternType: 0
-    volume_patternType: 4
+    volume_patternType: 2
 --- !u!114 &1279342719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265372,7 +265381,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279342677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b40f9015d5cb38468374bef13be246f, type: 3}
   m_Name: 
@@ -294780,6 +294789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 1405502865}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &1405502869
 MonoBehaviour:
@@ -296603,7 +296613,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426515811}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 247ce253e3ea4e44b9c5078b9488ecbc, type: 3}
   m_Name: 
@@ -296843,7 +296853,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426515811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 247ce253e3ea4e44b9c5078b9488ecbc, type: 3}
   m_Name: 
@@ -351744,6 +351754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 1690406059}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &1690406063
 MonoBehaviour:
@@ -355682,7 +355693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1723017363
 Transform:
   m_ObjectHideFlags: 0
@@ -356058,6 +356069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Car: {fileID: 1723298211}
+  Setspeed: 0
   speed_type: 2
 --- !u!114 &1723298215
 MonoBehaviour:
@@ -377233,7 +377245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1904530407
 Transform:
   m_ObjectHideFlags: 0
@@ -391082,7 +391094,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975137763}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba26b1b3a8e45984aa856f4c620e423a, type: 3}
   m_Name: 
@@ -391130,7 +391142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975137763}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba26b1b3a8e45984aa856f4c620e423a, type: 3}
   m_Name: 
