@@ -39042,7 +39042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &109725614
 Transform:
   m_ObjectHideFlags: 0
@@ -272534,7 +272534,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279342677}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 940c7bd214c546544a094575f68c05d1, type: 3}
   m_Name: 
@@ -272576,7 +272576,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279342677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c44f804eef79f364cac9454ee82bc7ab, type: 3}
   m_Name: 
@@ -304575,7 +304575,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515817
 MonoBehaviour:
@@ -304599,7 +304599,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515818
 MonoBehaviour:
@@ -304623,7 +304623,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515819
 MonoBehaviour:
@@ -304671,7 +304671,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515821
 MonoBehaviour:
@@ -304719,7 +304719,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515823
 MonoBehaviour:
@@ -304743,7 +304743,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515824
 MonoBehaviour:
@@ -304767,7 +304767,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 1
+  Senkosya_mode: 0
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515825
 MonoBehaviour:
@@ -304791,7 +304791,7 @@ MonoBehaviour:
   HumanGroupB: {fileID: 348597970}
   HumanGroupC: {fileID: 774817904}
   HumanGroupD: {fileID: 1714773360}
-  Senkosya_mode: 0
+  Senkosya_mode: 1
   SenkosyaObject: {fileID: 139633091}
 --- !u!114 &1426515826
 MonoBehaviour:
@@ -388226,7 +388226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1904530407
 Transform:
   m_ObjectHideFlags: 0
@@ -402774,7 +402774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BikeA: {fileID: 1099340055}
-  BikeB: {fileID: 0}
+  BikeB: {fileID: 141548965}
   BikeC: {fileID: 135555899}
   BikeD: {fileID: 674872671}
 --- !u!114 &1975137773
@@ -402824,7 +402824,7 @@ MonoBehaviour:
   BikeA: {fileID: 1152670902}
   BikeB: {fileID: 786818240}
   BikeC: {fileID: 1443421591}
-  BikeD: {fileID: 0}
+  BikeD: {fileID: 160343142}
 --- !u!114 &1975137776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402872,7 +402872,7 @@ MonoBehaviour:
   BikeA: {fileID: 619604469}
   BikeB: {fileID: 46337277}
   BikeC: {fileID: 1443421591}
-  BikeD: {fileID: 0}
+  BikeD: {fileID: 160343142}
 --- !u!1 &1975585263
 GameObject:
   m_ObjectHideFlags: 0
