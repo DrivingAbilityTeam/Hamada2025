@@ -17,6 +17,7 @@ public class Blinker_Hit : MonoBehaviour
     [SerializeField] private GameObject leftBlinker;
     [SerializeField] private GameObject rightBlinker;
 
+    public static bool blinker = false;
    
     private void Start()
     {
@@ -33,6 +34,7 @@ public class Blinker_Hit : MonoBehaviour
             ActivateBlinker();
             //通過したボックスを消す
             collider.gameObject.SetActive(false);
+            blinker = true;
         }
         if (collider.gameObject.tag == "blinker_off")
         {
@@ -40,7 +42,7 @@ public class Blinker_Hit : MonoBehaviour
             NotactivateBlinker();
             //通過したボックスを消す
             collider.gameObject.SetActive(false);
-
+            blinker = false;
         }
     }
 

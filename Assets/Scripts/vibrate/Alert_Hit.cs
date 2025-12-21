@@ -10,6 +10,7 @@ public class Alert_Hit : MonoBehaviour
     private bool Alert_on = false;
     private bool Alert_wait = false;
     private int i=0;
+    public static bool alert = false;
 
     IEnumerator Alert_Audio()
     {
@@ -53,6 +54,7 @@ public class Alert_Hit : MonoBehaviour
             Alert_on = true;
             //通過したボックスを消す
             collider.gameObject.SetActive(false);
+            alert = true;
         }
         if (collider.gameObject.tag == "Alert_off")
         {
@@ -60,6 +62,7 @@ public class Alert_Hit : MonoBehaviour
             Alert_on = false;
             //通過したボックスを消す
             collider.gameObject.SetActive(false);
+            alert = false;
 
         }
     }

@@ -64,7 +64,7 @@ public class saveFunction3 : MonoBehaviour
     filename = filename + now.Year.ToString() + "_" + now.Month.ToString() + "_" + now.Day.ToString() + "_" + now.Hour.ToString() + "_" + now.Minute.ToString() + "_" + save_number;
 
     sw = new StreamWriter(filename + ".csv", true, Encoding.GetEncoding("Shift_JIS"));
-    string[] s1 = { "Time", "Accel", "Brake","Car_Speed", "Car_AutoSpeed", "Car_AutoStatus", "Bike_A_Status", "Bike_B_Status", "Bike_C_Status", "Bike_D_Status", "Bike_Distance","Vibrate_Status","BPM" };//�\�̈�ԏ�ɓ���鍀�ږ��������Ŏw��
+    string[] s1 = { "Time", "Accel", "Brake","Car_Speed", "Car_AutoSpeed", "Car_AutoStatus", "Bike_A_Status", "Bike_B_Status", "Bike_C_Status", "Bike_D_Status", "Bike_Distance", "Blinker", "Alert"};//�\�̈�ԏ�ɓ���鍀�ږ��������Ŏw��
     string s2 = string.Join(",", s1);//������ɋ�؂������
     sw.WriteLine(s2);
 
@@ -73,10 +73,10 @@ public class saveFunction3 : MonoBehaviour
     SendPercheCommand("log");
     }
 
-    public void SaveData(string txt1, string txt2, string txt3, string txt4, string txt5, string txt6, string txt7, string txt8, string txt9, string txt10, string txt11, string txt12)//�f�[�^�擾�̃I�u�W�F�N�g�ɃA�^�b�`����X�N���v�g���ŌĂяo�����֐�
+    public void SaveData(string txt1, string txt2, string txt3, string txt4, string txt5, string txt6, string txt7, string txt8, string txt9, string txt10, string txt11, string txt12, string txt13)//�f�[�^�擾�̃I�u�W�F�N�g�ɃA�^�b�`����X�N���v�g���ŌĂяo�����֐�
     {
 
-        string[] s1 = { txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9, txt10, txt11, txt12};
+        string[] s1 = { txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9, txt10, txt11, txt12,txt13};
         string s2 = string.Join(",", s1);
         sw.WriteLine(s2);
         // === SaveDataタイミングでBPM記録指示を送信 ===
@@ -87,7 +87,7 @@ public class saveFunction3 : MonoBehaviour
     void Update()
     {
       _time += Time.deltaTime;      
-      SaveData(_time.ToString(format), _car.AccelInput.ToString(format), _car.BrakeInput.ToString(format), _car.speed.ToString(format), _autoCar.moveSpeed.ToString(format), _autoCar.car_status.ToString(), Bike_SetAc.bike_A_status.ToString(), Bike_SetAc.bike_B_status.ToString(), Bike_SetAc.bike_C_status.ToString(), Bike_SetAc.bike_D_status.ToString(), Bike_Dis.disZ1.ToString(format),Vibrate_Change.vibrate_status.ToString());
+      SaveData(_time.ToString(format), _car.AccelInput.ToString(format), _car.BrakeInput.ToString(format), _car.speed.ToString(format), _autoCar.moveSpeed.ToString(format), _autoCar.car_status.ToString(), Bike_SetAc.bike_A_status.ToString(), Bike_SetAc.bike_B_status.ToString(), Bike_SetAc.bike_C_status.ToString(), Bike_SetAc.bike_D_status.ToString(), Bike_Dis.disZ1.ToString(format), Blinker_Hit.blinker.ToString(), Alert_Hit.alert.ToString());
 
       if (Input.GetKeyDown(KeyCode.Return))
       {
