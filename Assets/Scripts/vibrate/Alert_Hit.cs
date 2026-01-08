@@ -50,6 +50,7 @@ public class Alert_Hit : MonoBehaviour
         if (!this.enabled) { return; } //スクリプトを非アクティブにしてもトリガーは有効なため、この一行を入れる
         if (collider.gameObject.tag == "Alert_Hit")
         {
+            Debug.Log("AlertON!!!!!!!!!!!!!");
             if (Alert_icon != null) Alert_icon.SetActive(true);
             Alert_on = true;
             //通過したボックスを消す
